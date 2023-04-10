@@ -1,10 +1,14 @@
 
+
+import BlackCalculator from "./components/Black/Black";
+
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
+
+      <BlackCalculator />
+      
     </div>
   );
 }

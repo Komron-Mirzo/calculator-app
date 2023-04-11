@@ -11,10 +11,30 @@ const BlackCalculator = () => {
 
     const [result, setResult] = useState('');
 
+
     const handleClick = (e) => {
-        setResult(result.concat(e.target.name));
-        console.log(result)
+        if (result.length < 16) {
+            setResult(result.concat(e.target.name));
+        } else {
+            setResult(result)
+        }
     };
+
+    const clickReset = () => {
+        if (result) {
+            setResult("")
+        }
+    }
+
+    const clickBackSpace = () => {
+        if (result) {
+            setResult(result.slice(0, -1))
+        }
+    }
+
+    const clickZero = () => {
+        
+    }
 
 
 
@@ -24,7 +44,17 @@ const BlackCalculator = () => {
                 <Screen value={result} />
             </div>
             <div className={styles.buttons}>
-                {buttonsList.map(val => <button onClick={handleClick} key={val} name={val}>{val}</button>)}
+                {buttonsList.map(val =>
+                    <button onClick={
+                        val === "AC"
+                            ? clickReset
+                            : val === "⌫"
+                            ? clickBackSpace
+                            : handleClick
+                            
+                    }
+                        key={val} name={val}>{val}
+                    </button>)}
 
             </div>
         </div>

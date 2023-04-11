@@ -21,9 +21,28 @@
 }
 
 #screen {
-   width: auto;
+   width: 100%;
    height: 205px;
+   background: #ffffff08;  
+   display: inline-block;
+}
+
+#screen-result{
+   color: #fff;
+   font-family: 'Poppins';
+   font-style: normal;
+   font-weight: 500;
+   font-size: 30px;
+   line-height: 35px;
+   padding: 10px;
    background: #ffffff08;
+   display: inline-block;
+   box-sizing: border-box;
+   width: 100%;
+   height: 100%;
+}
+#screen-result div {
+   padding: 20px 10px;
 }
 
 .buttons {
@@ -48,7 +67,6 @@
    padding: 6px;
    height: 73px;
    background-color: #303136;
-   box-shadow: 0px 3px 10px #17181A, 0px 50px 12px #17181A;
 }
 
 .buttons button:hover {
@@ -57,8 +75,8 @@
 }
 
 .buttons button:active {
-   box-shadow: 0px 4px 8px rgba(darken(#000, 100%));
    transform: scale(.98);
+   color: #fff;
 }
 
 button:nth-child(17) {
